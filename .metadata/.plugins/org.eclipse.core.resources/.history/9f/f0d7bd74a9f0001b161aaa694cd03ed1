@@ -1,0 +1,22 @@
+package br.com.desafiosefaz;
+
+import java.util.ArrayList;
+
+import javax.faces.bean.ManagedBean;
+
+import br.com.desafiosefaz.dao.UsuarioDAO;
+
+@ManagedBean(name = "principal")
+public class Principal {
+	
+	UsuarioDAO usrDAO = new UsuarioDAO();
+	
+	
+	public ArrayList<Usuario> listarTodosUsuarios(){
+		
+		ArrayList<Usuario> listUsuarios = usrDAO.listarTodosUsuarios();
+		
+		return listUsuarios;
+	}
+	
+}

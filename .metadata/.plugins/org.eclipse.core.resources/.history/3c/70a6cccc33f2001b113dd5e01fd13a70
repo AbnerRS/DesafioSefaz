@@ -1,0 +1,53 @@
+package br.com.desafiosefaz.model;
+
+import java.util.ArrayList;
+
+import br.com.desafiosefaz.controller.Controller;
+
+public class main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ArrayList<Usuario> listaDeUsuarios = new ArrayList<Usuario>();
+		ArrayList<Telefone> listaTelefone = new ArrayList<Telefone>();
+		
+		Telefone telefone = new Telefone();
+		Telefone telefone1 = new Telefone();
+		
+		UsuarioDAO usrDAO = new UsuarioDAO();
+		
+		Controller c1 = new Controller();
+		
+		int id= 8;
+		String nome = "abner";
+		String email = "abner@gmail.com";
+		String senha = "1234";
+
+		
+		telefone.setDdd(81);
+		telefone.setNumero("996384497");
+		telefone.setTipo("Celular");
+		
+		
+		
+		int ddd = Integer.parseInt(telefone.toString().substring(1, 3));
+		String numero = telefone.toString().substring(4, 13);
+		String tipo = telefone.toString().substring(16, telefone.toString().length());
+		
+		telefone1.setDdd(ddd);
+		telefone1.setNumero(numero);
+		telefone1.setTipo(tipo);
+		
+		
+		
+		listaTelefone.add(telefone1);
+		
+		listaDeUsuarios.add(new Usuario(id, nome, email, senha, listaTelefone));
+		
+		
+		
+		System.out.println(listaTelefone);
+		System.out.println(listaDeUsuarios.get(0).getTelefone());
+	}
+
+}

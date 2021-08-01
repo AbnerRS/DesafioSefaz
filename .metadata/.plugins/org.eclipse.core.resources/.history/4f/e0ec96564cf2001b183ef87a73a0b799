@@ -1,0 +1,23 @@
+/**
+ * Autenticar o Login do Usuário
+ */
+
+
+function autenticar(){
+	
+	let login = frmLogin.email.value
+	let pwd = frmLogin.senha.value
+
+	if (login === "") {
+		alert('Preencha o campo E-mail')
+		frmUsuario.nome.focus()
+		return false
+	
+	} else if (pwd === "") {
+		alert('Preencha o campo Senha')
+		frmUsuario.senha.focus()
+		return false
+	} else {
+		document.forms["frmLogin"].submit()
+	}
+}

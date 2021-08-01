@@ -1,0 +1,48 @@
+package br.com.desafiosefaz;
+
+import javax.faces.application.FacesMessage;
+import javax.faces.bean.ManagedBean;
+import javax.faces.context.FacesContext;
+
+@ManagedBean(name = "login")
+public class Login {
+	
+	
+	
+	private String inputEmail;
+	private String inputSenha;
+
+	public String getInputEmail() {
+		return inputEmail;
+	}
+
+	public void setInputEmail(String inputEmail) {
+		this.inputEmail = inputEmail;
+	}
+
+	public String getInputSenha() {
+		return inputSenha;
+	}
+
+	public void setInputSenha(String inputSenha) {
+		this.inputSenha = inputSenha;
+	}
+
+	public String autenticar() {
+
+		if (this.inputEmail.equals("admin") && this.inputSenha.equals("admin")) {
+					
+			return "Principal";
+		} else if (this.inputEmail != null && this.inputSenha != null) {
+			FacesMessage fm = new FacesMessage("Login ou Senha inválido!");
+			FacesContext.getCurrentInstance().addMessage("msg", fm);
+			return null;
+		} else
+			return null;
+	}
+
+	public String telaCadastro() {
+
+		return "Cadastro";
+	}
+}

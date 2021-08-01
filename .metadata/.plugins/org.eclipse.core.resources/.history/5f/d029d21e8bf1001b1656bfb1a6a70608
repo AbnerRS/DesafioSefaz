@@ -1,0 +1,114 @@
+package br.com.desafiosefaz.controller;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import br.com.desafiosefaz.model.DAO;
+import br.com.desafiosefaz.model.Usuario;
+import br.com.desafiosefaz.model.UsuarioDAO;
+
+@WebServlet(urlPatterns = { "/main", "/insert", "/select", "/update" })
+public class Controller extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	DAO dao = new DAO();
+	Usuario usr = new Usuario();
+	UsuarioDAO usrDAO = new UsuarioDAO();
+
+	public Controller() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		String action = request.getServletPath();
+		System.out.println(action);
+
+		if (action.equals("/main")) {
+			usuarios(request, response);
+		} else if (action.equals("/insert")) {
+			novoUsuario(request, response);
+		} else if (action.equals("/select")) {
+			editarUsuario(request, response);
+
+		}else if (action.equals("/update")) {
+			updateUsuario(request, response);
+			
+		else {
+			response.sendRedirect("index.html");
+		}
+	}
+
+	// Listar Usuários
+	public void usuarios(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		ArrayList<Usuario> lista = usrDAO.listarTodosUsuarios();
+
+		request.setAttribute("usuarios", lista);
+		RequestDispatcher rd = request.getRequestDispatcher("principal.jsp");
+		rd.forward(request, response);
+	}
+
+	// Novo Usuário
+	protected void novoUsuario(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		// setar as variáveis
+		usr.setNome(request.getParameter("nome"));
+		usr.setEmail(request.getParameter("email"));
+		// usr.setTelefone(request.getParameter("nome"));
+		usr.setSenha(request.getParameter("senha"));
+
+		// invocar o Inserir passando o usuário
+		usrDAO.inserirUsuario(usr);
+
+		// redirecionar para principal.jsp
+		response.sendRedirect("main");
+	}
+
+	// Listar Usuário separadamento na aba de editar
+	protected void editarUsuario(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		// recebimento do id do Usuario que vai ser editado
+		String id = request.getParameter("id");
+		// Setar a variável Usuario
+		int idConvertido = Integer.parseInt(id);
+		usr.setId(idConvertido);
+
+		// Executar o método escolheUsuario
+		usrDAO.escolheUsuario(usr);
+
+		// Setar os atributos do formulário com o Conteúdo do Usuário da tabela
+		request.setAttribute("id", usr.getId());
+		request.setAttribute("nome", usr.getNome());
+		request.setAttribute("email", usr.getEmail());
+		request.setAttribute("senha", usr.getSenha());
+
+		// encaminhar ao documento editar.jsp
+		RequestDispatcher rd = request.getRequestDispatcher("editar.jsp");
+		rd.forward(request, response);
+
+	}
+
+	// Editar usuário
+	protected void updateUsuario(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		System.out.println(request.getParameter("id"));
+		System.out.println(request.getParameter("nome"));
+		System.out.println(request.getParameter("email"));
+		System.out.println(request.getParameter("senha"));
+		
+	}
+}

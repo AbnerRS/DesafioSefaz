@@ -1,0 +1,28 @@
+package br.com.desafiosefaz.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class CNXJDBC {
+	
+	private final String DRIVER_CLASS = "org.hsqldb.jdbcDriver";
+	private Connection conn = null;
+	private String usuario = "SA";
+	private String senha = "";
+	private String PathBase = "C:\\Users\\Casa\\Desktop\\Desafio Sefaz\\DesafioSefaz\\bancoDados\\";
+	private final String URL = "jdbc:hsqldb:file" + PathBase;
+	
+	public void conectar() {
+		
+		try {
+			Class.forName(DRIVER_CLASS);
+			
+			//estabelecendo conexão
+			cnx = DriverManager.getConnection(URL, usuario, senha);
+			
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+
+}

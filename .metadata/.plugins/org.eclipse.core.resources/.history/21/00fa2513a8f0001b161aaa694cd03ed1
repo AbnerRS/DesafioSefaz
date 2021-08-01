@@ -1,0 +1,70 @@
+package br.com.desafiosefaz;
+
+import java.sql.Connection;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import br.com.desafiosefaz.dao.UsuarioDAO;
+import br.com.desafiosefaz.jdbc.CNXJDBC;
+
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		UsuarioDAO usrDAO = new UsuarioDAO();
+		
+		Usuario usuario1 = new Usuario();
+		usuario1.setId(6);
+		usuario1.setNome("abner");
+		usuario1.setEmail("abner@hotmail.com");
+		usuario1.setSenha("1234");
+		
+		//usrDAO.inserirUsuario(usuario1);
+		
+		//usrDAO.excluirUsuario(usuario1);
+		
+		ArrayList<Usuario> listUsuarios = usrDAO.listarTodosUsuarios();
+		for(Usuario umUsuario : listUsuarios)
+			System.out.println(umUsuario.getId() + ", " + umUsuario.getNome() + ", " + umUsuario.getEmail() + ", " + umUsuario.getSenha());
+		
+		
+		
+		
+	
+
+		/*// Criar EntityManagerFactory
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("minha-persistence-unit");
+
+		// Criar EntityManager
+		EntityManager em = emf.createEntityManager();
+
+		// Fazer consulta ao banco
+		List<Usuario> lista = em.createQuery("FROM Usuario", Usuario.class).getResultList();
+
+		for (Usuario objeto : lista) {
+
+			System.out.println(
+					"Objeto no banco: " + objeto.getNome() + "," + objeto.getEmail() + "," + objeto.getSenha());
+		}
+
+		Usuario objeto = new Usuario();
+		objeto.setNome("abner");
+		objeto.setSenha("123");
+		objeto.setEmail("abner@hotmail.com");
+
+		// Persistir objeto no banco
+		em.getTransaction().begin();
+		em.persist(objeto);
+		em.getTransaction().commit();
+
+		// Fechar EntityManager e EntityManagerFactory
+		em.close();
+		emf.close();
+*/
+	}
+}

@@ -1,0 +1,6 @@
+package snippet;
+
+public class Snippet {
+	Exception in thread "main" javax.persistence.PersistenceException: No Persistence provider for EntityManager named minha-persistence-unit
+}
+

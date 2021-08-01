@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>Desafio Sefaz</title>
+<link rel="icon" href="imagens/favicon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+	<img src="imagens/login_user.png">
+	<h1>Login</h1>
+	<form>
+		<input type="e-mail" name="email" placeholder="Digite seu e-mail"  class="Caixa1">
+		<input type="password" name="senha" placeholder="digite sua senha"  class="Caixa1">
+		<a href="main" class="Botao">Entrar</a>
+	</form>
+</body>
+</html>

@@ -1,0 +1,17 @@
+package br.com.desafiosefaz;
+
+import javax.faces.bean.ManagedBean;
+
+@ManagedBean(name = "login")
+public class Login {
+
+	String inputEmail;
+	String inputSenha;
+	
+	
+	public String fazerLogin() {
+		
+		
+		return "";
+	}
+}

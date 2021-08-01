@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>Desafio Sefaz</title>
+<link rel="icon" href="imagens/favicon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+	<img src="imagens/login_user.png">
+
+	<form name="frmLogin" action="login">
+		<h1>Login</h1>
+		<table>
+			<tr>
+				<td><input type="text" name="Login" placeholder="Email"
+					class="Caixa1"></td>
+			</tr>
+			<tr>
+				<td><input type="password" name="pwd" placeholder="Senha"
+					class="Caixa1"></td>
+			</tr>
+		</table>
+		<input type="button" value="Entrar" id="botaoLogin"
+			onclick="autenticar()"  >
+	</form>
+
+	<script src="scripts/autenticador.js"></script>
+</body>
+</html>

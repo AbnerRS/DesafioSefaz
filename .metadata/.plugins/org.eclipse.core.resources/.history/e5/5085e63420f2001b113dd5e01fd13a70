@@ -1,0 +1,30 @@
+/**
+ * Validação de Formulário
+ */
+
+function validar() {
+	let nome = frmUsuario.nome.value
+	let email = frmUsuario.email.value
+	let telefone = frmUsuario.telefone.value
+	let senha = frmUsuario.senha.value
+
+	if (nome === "") {
+		alert('Preencha o campo Nome')
+		frmUsuario.nome.focus()
+		return false
+	} else if (email === "") {
+		alert('Preencha o campo E-mail')
+		frmUsuario.email.focus()
+		return false
+	} else if (telefone === "") {
+		alert('Preencha o campo Telefone')
+		frmUsuario.telefone.focus()
+		return false
+	} else if (senha === "") {
+		alert('Preencha o campo Senha')
+		frmUsuario.senha.focus()
+		return false
+	}else{
+		document.forms["frmUsuario"].submit()
+	}
+}

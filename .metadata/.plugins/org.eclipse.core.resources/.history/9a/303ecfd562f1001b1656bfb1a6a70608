@@ -1,0 +1,10 @@
+/**
+ * Validação de Formulário
+ */
+
+function validar(){
+	let nome = frmUsuario.nome.value
+	let email = frmUsuario.email.value
+	let telefone = frmUsuario.telefone.value
+	let senha = frmUsuario.senha.value
+}

@@ -1,0 +1,10 @@
+package br.com.desafiosefaz;
+
+import javax.faces.bean.ManagedBean;
+
+@ManagedBean(name = "cadastro")
+public class Cadastro {
+	
+	
+
+}

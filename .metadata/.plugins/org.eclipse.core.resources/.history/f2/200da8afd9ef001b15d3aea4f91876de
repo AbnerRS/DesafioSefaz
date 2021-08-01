@@ -1,0 +1,12 @@
+package br.com.desafiosefaz;
+
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
+
+@RequestScoped
+@ManagedBean(name = "cadastro")
+public class Cadastro {
+	
+	
+
+}

@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+C:\Users\Casa\Desktop\Desafio Sefaz\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2623104812.index
+3672838008.index
+2573238859.index
+3207878086.index
+3080608329.index
+487219268.index

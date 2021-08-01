@@ -1,0 +1,44 @@
+package br.com.desafiosefaz;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		// Criar EntityManagerFactory
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("minha-persistence-unit");
+
+		// Criar EntityManager
+		EntityManager em = emf.createEntityManager();
+
+		// Fazer consulta ao banco
+		List<Usuario> lista = em.createQuery("FROM Usuario", Usuario.class).getResultList();
+
+		for (Usuario objeto : lista) {
+
+			System.out.println("Objeto no banco: " + objeto.getNome() + "," + objeto.getEmail() + "," + objeto.getSenha());
+		}
+		
+			Usuario objeto = new Usuario(null, null, null, null);
+			objeto.setNome("abner");
+			objeto.setSenha("123");
+			objeto.setEmail("abner@hotmail.com");
+			
+			// Persistir objeto no banco
+			em.getTransaction().begin();
+			em.persist(objeto);
+			em.getTransaction().commit();
+
+			// Fechar EntityManager e EntityManagerFactory
+			em.close();
+			emf.close();
+
+	
+
+	}
+}

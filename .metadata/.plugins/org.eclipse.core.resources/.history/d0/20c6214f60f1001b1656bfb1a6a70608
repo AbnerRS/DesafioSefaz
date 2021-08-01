@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>Desafio Sefaz</title>
+<link rel="icon" href="imagens/favicon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<h1>Criar Novo Usuário</h1>
+	<form name="frmUsuario" action="">
+		<table>
+			<tr>
+				<td><input type="text" name="nome" placeholder="Nome"></td>
+			</tr>
+			<tr>
+				<td><input type="text" name="email" placeholder="Email"></td>
+			</tr>
+			<tr>
+				<td><input type="number" name="telefone" placeholder="Telefone"></td>
+			</tr>
+			<tr>
+				<td><input type="password" name="senha" placeholder="Senha"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

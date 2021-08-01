@@ -1,0 +1,4 @@
+maven.h2.console.enabled = true
+maven.datasource.platform=h2
+maven.datasource.url=jdbc:h2:mem:socialdb
+maven.datasource.driverClassName=org.h2.driver

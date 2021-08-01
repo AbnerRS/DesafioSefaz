@@ -1,0 +1,86 @@
+package br.com.desafiosefaz;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.faces.bean.ManagedBean;
+
+import br.com.desafiosefaz.jdbc.UsuarioDAO;
+
+@ManagedBean(name = "cadastro")
+public class Cadastro {
+
+	private Long id;
+	private String inputNomeCadastro;
+	private String inputEmailCadastro;
+	private String inputSenhaCadastro;
+	private List<Telefone> inputTelefonesCadastro = new ArrayList<Telefone>();
+	private Usuario novoUsuario = new Usuario();
+	
+	
+	
+	public String cadastrarUsuario() {
+	
+		UsuarioDAO usrDAO = new UsuarioDAO();
+		
+		novoUsuario.setNome(inputNomeCadastro);
+		novoUsuario.setEmail(inputEmailCadastro);
+		novoUsuario.setSenha(inputSenhaCadastro);
+		novoUsuario.setTelefone(inputTelefonesCadastro);
+		
+		usrDAO.inserirUsuario(novoUsuario);
+		
+		return "";
+	}
+	
+
+	public String getInputNomeCadastro() {
+		return inputNomeCadastro;
+	}
+
+	public void setInputNomeCadastro(String inputNomeCadastro) {
+		this.inputNomeCadastro = inputNomeCadastro;
+	}
+
+	public String getInputEmailCadastro() {
+		return inputEmailCadastro;
+	}
+
+	public void setInputEmailCadastro(String inputEmailCadastro) {
+		this.inputEmailCadastro = inputEmailCadastro;
+	}
+
+	public String getInputSenhaCadastro() {
+		return inputSenhaCadastro;
+	}
+
+	public void setInputSenhaCadastro(String inputSenhaCadastro) {
+		this.inputSenhaCadastro = inputSenhaCadastro;
+	}
+
+	public List<Telefone> getInputTelefonesCadastro() {
+		return inputTelefonesCadastro;
+	}
+
+	public void setInputTelefonesCadastro(List<Telefone> inputTelefonesCadastro) {
+		this.inputTelefonesCadastro = inputTelefonesCadastro;
+	}
+
+	public String telaLogin() {
+
+		return "Login";
+	}
+
+	public String cadastrar() {
+
+		return null;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+}

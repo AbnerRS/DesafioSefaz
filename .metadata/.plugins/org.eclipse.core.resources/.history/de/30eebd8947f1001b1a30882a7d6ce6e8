@@ -1,0 +1,57 @@
+package br.com.desafiosefaz;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+import javax.annotation.PostConstruct;
+import javax.faces.bean.ManagedBean;
+
+import br.com.desafiosefaz.dao.UsuarioDAO;
+
+@ManagedBean(name = "principal")
+public class Principal {
+	
+	
+	private UsuarioDAO usrDAO = new UsuarioDAO();
+	
+	private List<Usuario> listUsuarios;
+	 
+	
+	@PostConstruct
+	public void listaDeUsuarios() {
+		
+		
+		@SuppressWarnings("unused")
+		List<Usuario> usuariosBusca = usrDAO.listarTodosUsuarios();
+
+        List<Usuario> usuarios = (List<Usuario>) usrDAO.listarTodosUsuarios();
+        System.out.println(usuarios.get(0));
+
+        for (Iterator<?> iterator = usuarios.iterator(); iterator.hasNext();) {
+            Usuario usuario = (Usuario) iterator.next();
+            usuario.setId(usuario.getId());
+            usuario.setNome(usuario.getNome());
+            usuario.setEmail(usuario.getEmail());
+            usuario.setSenha(usuario.getSenha());
+            usuarios.add(usuario);
+        }
+
+        this.setListUsuarios(usuarios);
+    }
+
+    public String getMensagem() {
+        return "Teste";
+    }
+
+	public List<Usuario> getListUsuarios() {
+		return listUsuarios;
+	}
+
+	public void setListUsuarios(List<Usuario> listUsuarios) {
+		this.listUsuarios = listUsuarios;
+	}
+
+	
+
+}
