@@ -29,3 +29,13 @@
 127.0.0.1 - - [01/Aug/2021:16:30:55 -0300] "GET /DesafioSefaz/login?login=admin&pwd=admin HTTP/1.1" 302 -
 127.0.0.1 - - [01/Aug/2021:16:30:55 -0300] "GET /DesafioSefaz/main HTTP/1.1" 200 1721
 127.0.0.1 - - [01/Aug/2021:16:30:55 -0300] "GET /DesafioSefaz/scripts/confirmador.js HTTP/1.1" 304 -
+127.0.0.1 - - [01/Aug/2021:17:58:58 -0300] "GET / HTTP/1.1" 404 763
+127.0.0.1 - - [01/Aug/2021:17:59:22 -0300] "GET /DesafioSefaz/faces/Login.xhtml HTTP/1.1" 404 789
+127.0.0.1 - - [01/Aug/2021:17:59:22 -0300] "GET /favicon.ico HTTP/1.1" 404 762
+127.0.0.1 - - [01/Aug/2021:17:59:26 -0300] "GET /DesafioSefaz/ HTTP/1.1" 200 704
+127.0.0.1 - - [01/Aug/2021:17:59:26 -0300] "GET /DesafioSefaz/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [01/Aug/2021:17:59:26 -0300] "GET /DesafioSefaz/scripts/autenticador.js HTTP/1.1" 304 -
+127.0.0.1 - - [01/Aug/2021:17:59:26 -0300] "GET /DesafioSefaz/imagens/favicon.png HTTP/1.1" 200 779
+127.0.0.1 - - [01/Aug/2021:17:59:31 -0300] "GET /DesafioSefaz/login?login=admin&pwd=admin HTTP/1.1" 302 -
+127.0.0.1 - - [01/Aug/2021:17:59:31 -0300] "GET /DesafioSefaz/main HTTP/1.1" 200 1721
+127.0.0.1 - - [01/Aug/2021:17:59:31 -0300] "GET /DesafioSefaz/scripts/confirmador.js HTTP/1.1" 200 237
